@@ -13,4 +13,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup() -- activate lazy plugin manager
+require('lazy').setup({ -- activate lazy plugin manager
+  {
+    'catppuccin/nvim', -- bare minimun catppuccin theme
+    name = 'catppuccin',
+    config = function()
+      vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+})
+
+vim.o.clipboard = 'unnamedplus' -- use system clipboard, worth checking exactly which
