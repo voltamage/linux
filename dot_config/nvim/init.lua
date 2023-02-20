@@ -17,6 +17,7 @@ require('lazy').setup({ -- activate lazy plugin manager
   {
     'catppuccin/nvim', -- bare minimun catppuccin theme
     name = 'catppuccin',
+    transparent_background = true,
     config = function()
       vim.cmd.colorscheme 'catppuccin'
     end,
