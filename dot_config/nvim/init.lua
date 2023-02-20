@@ -14,7 +14,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({ -- activate lazy plugin manager
-  {
+'tpope/vim-fugitive',
+{
     'catppuccin/nvim', -- bare minimun catppuccin theme
     name = 'catppuccin',
     transparent_background = true,
