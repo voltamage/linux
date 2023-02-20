@@ -27,9 +27,15 @@ require('lazy').setup({ -- activate lazy plugin manager
   },
   {
     'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end,
+    config = true, -- run require('gitsigns').setup()
+  },
+  {
+    'sindrets/diffview.nvim', -- vscode-like diff view
+    use_icons = true, -- icons toggle
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- common files
+      'nvim-tree/nvim-web-devicons', -- icons library
+    },
   },
 })
 
