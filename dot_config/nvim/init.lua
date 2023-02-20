@@ -22,6 +22,13 @@ require('lazy').setup({ -- activate lazy plugin manager
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end,
+  },
 })
 
 vim.o.clipboard = 'unnamedplus' -- use system clipboard, worth checking exactly which
+vim.o.mouse = 'a' -- enable mouse, across all modes? have to check
