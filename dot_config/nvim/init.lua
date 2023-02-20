@@ -18,6 +18,8 @@ require('lazy').setup({ -- activate lazy plugin manager
 {
     'catppuccin/nvim', -- bare minimun catppuccin theme
     name = 'catppuccin',
+    lazy = false,
+    priority = 1000,
     transparent_background = true,
     integrations = {
       gitsigns = true,
@@ -36,6 +38,10 @@ require('lazy').setup({ -- activate lazy plugin manager
       'nvim-lua/plenary.nvim', -- common files
       'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
     },
+  },
+  defaults = {
+  lazy = true, -- should plugins be lazy-loaded?
+  version = "*", -- use "*" to try installing the latest stable versions of plugins
   },
 })
 
