@@ -31,10 +31,9 @@ require('lazy').setup({ -- activate lazy plugin manager
   },
   {
     'sindrets/diffview.nvim', -- vscode-like diff view
-    use_icons = true, -- icons toggle
     dependencies = {
       'nvim-lua/plenary.nvim', -- common files
-      'nvim-tree/nvim-web-devicons', -- icons library
+      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
     },
   },
 })
