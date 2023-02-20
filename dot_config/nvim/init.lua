@@ -39,11 +39,48 @@ require('lazy').setup({ -- activate lazy plugin manager
       'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
     },
   },
+  { -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require('lazy').setup({'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'})
+    end,
+  },
+  {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    dependencies = {
+      -- LSP Support
+      'neovim/nvim-lspconfig',             -- Required
+      'williamboman/mason.nvim',           -- Optional
+      'williamboman/mason-lspconfig.nvim', -- Optional
+
+      -- Autocompletion
+      'hrsh7th/nvim-cmp',         -- Required
+      'hrsh7th/cmp-nvim-lsp',     -- Required
+      'hrsh7th/cmp-buffer',       -- Optional
+      'hrsh7th/cmp-path',         -- Optional
+      'saadparwaiz1/cmp_luasnip', -- Optional
+      'hrsh7th/cmp-nvim-lua',     -- Optional
+
+    -- Snippets
+      'L3MON4D3/LuaSnip',             -- Required
+      'rafamadriz/friendly-snippets', -- Optional
+    },
+  },
   defaults = {
   lazy = true, -- should plugins be lazy-loaded?
   version = "*", -- use "*" to try installing the latest stable versions of plugins
   },
 })
+
+local lsp = require('lsp-zero').preset({
+    name = 'minimal',
+    set_lsp_keymaps = true,
+    manage_nvim_cmp = true,
+    suggest_lsp_servers = true,
+  })
+  lsp.nvim_workspace() -- (Optional) Configure lua language server for neovim
+  lsp.setup()
 
 vim.o.clipboard = 'unnamedplus' -- use system clipboard, worth checking exactly which
 vim.o.mouse = 'a' -- enable mouse, across all modes? have to check
