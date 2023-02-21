@@ -84,3 +84,5 @@ local lsp = require('lsp-zero').preset({
 
 vim.o.clipboard = 'unnamedplus' -- use system clipboard, worth checking exactly which
 vim.o.mouse = 'a' -- enable mouse, across all modes? have to check
+vim.o.number = true                           -- set numbered lines
+vim.o.relativenumber = true
