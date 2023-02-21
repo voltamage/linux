@@ -31,7 +31,7 @@ require('lazy').setup({ -- activate lazy plugin manager
 	  native_lsp = {
             enabled = true,
           },
-          telescope = true,
+--          telescope = true,
           treesitter = true,
         },
       })
