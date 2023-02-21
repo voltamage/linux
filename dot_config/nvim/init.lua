@@ -22,7 +22,11 @@ require('lazy').setup({ -- activate lazy plugin manager
     priority = 1000,
     transparent_background = true,
     integrations = {
+      cmp = true,
       gitsigns = true,
+      mason = true,
+      native_lsp = true,
+      treesitter = true,
     },
     config = function()
       vim.cmd.colorscheme 'catppuccin'
@@ -37,6 +41,15 @@ require('lazy').setup({ -- activate lazy plugin manager
     dependencies = {
       'nvim-lua/plenary.nvim', -- common files
       'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+    },
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = { -- ripgrep and fd binaries as well
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-fzf-native.nvim',
+      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+      'nvim-treesitter/nvim-treesitter',
     },
   },
   { -- Highlight, edit, and navigate code
