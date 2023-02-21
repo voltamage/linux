@@ -94,21 +94,22 @@ require('lazy').setup({ -- activate lazy plugin manager
       'L3MON4D3/LuaSnip',             -- Required
       'rafamadriz/friendly-snippets', -- Optional
     },
+    config = function()
+      local lsp = require('lsp-zero').preset({
+        name = 'minimal',
+        set_lsp_keymaps = true,
+        manage_nvim_cmp = true,
+        suggest_lsp_servers = true,
+      })
+      lsp.nvim_workspace() -- (Optional) Configure lua language server for neovim
+      lsp.setup()
+    end,
   },
   defaults = {
   lazy = true, -- should plugins be lazy-loaded?
   version = "*", -- use "*" to try installing the latest stable versions of plugins
   },
 })
-
-local lsp = require('lsp-zero').preset({
-    name = 'minimal',
-    set_lsp_keymaps = true,
-    manage_nvim_cmp = true,
-    suggest_lsp_servers = true,
-  })
-  lsp.nvim_workspace() -- (Optional) Configure lua language server for neovim
-  lsp.setup()
 
 vim.o.clipboard = 'unnamedplus' -- use system clipboard, worth checking exactly which
 vim.o.mouse = 'a' -- enable mouse, across all modes? have to check
