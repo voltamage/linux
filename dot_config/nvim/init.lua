@@ -57,6 +57,10 @@ require('lazy').setup({ -- activate lazy plugin manager
     },
     config = true, -- run require('gitsigns').setup()
   },
+  {
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim', -- vscode-like diff view
+    config = true, -- run require('gitsigns').setup()
+  },
 --  {
 --    'nvim-telescope/telescope.nvim',
 --    dependencies = { -- ripgrep and fd binaries as well
