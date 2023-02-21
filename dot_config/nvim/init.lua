@@ -49,6 +49,14 @@ require('lazy').setup({ -- activate lazy plugin manager
       'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
     },
   },
+  {
+    'folke/trouble.nvim', -- vscode-like diff view
+    dependencies = {
+      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+      --'folke/lsp-colors.nvim', -- for colorschemes that aren't LSP ready
+    },
+    config = true, -- run require('gitsigns').setup()
+  },
 --  {
 --    'nvim-telescope/telescope.nvim',
 --    dependencies = { -- ripgrep and fd binaries as well
@@ -131,4 +139,4 @@ vim.o.mouse = 'a' -- enable mouse, across all modes? have to check
 vim.o.number = true                           -- set numbered lines
 vim.o.relativenumber = true
 vim.o.termguicolors = true
-vim.o.wrap = false
+vim.o.wrap = false -- functioning?
