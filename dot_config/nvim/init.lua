@@ -63,7 +63,12 @@ require('lazy').setup({ -- activate lazy plugin manager
   },
   {
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim', -- vscode-like diff view
-    config = true, -- run require('gitsigns').setup()
+    config = function()
+      require('lsp_lines').setup()
+      vim.diagnostic.config({
+        virtual_text = false,
+      })
+    end,
   },
 --  {
 --    'nvim-telescope/telescope.nvim',
