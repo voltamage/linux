@@ -31,7 +31,7 @@ require('lazy').setup({ -- activate lazy plugin manager
 	  native_lsp = {
             enabled = true,
           },
---          telescope = true,
+          telescope = true,
           treesitter = true,
         },
       })
@@ -70,13 +70,22 @@ require('lazy').setup({ -- activate lazy plugin manager
       })
     end,
   },
+  {
+    'nvim-telescope/telescope.nvim',
+    dependencies = { -- ripgrep and fd binaries as well
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-fzf-native.nvim',
+      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = true, -- run require('gitsigns').setup()
+  },
 --  {
---    'nvim-telescope/telescope.nvim',
---    dependencies = { -- ripgrep and fd binaries as well
+--    'folke/todo-comments.nvim',
+--    dependencies = { -- ripgrep as well
 --      'nvim-lua/plenary.nvim',
---      'nvim-telescope/telescope-fzf-native.nvim',
---      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
---      'nvim-treesitter/nvim-treesitter',
+--      'nvim-telescope/telescope.nvim',
+--      'folke/trouble.nvim',
 --    },
 --  },
 --  {
@@ -153,3 +162,4 @@ vim.o.number = true                           -- set numbered lines
 vim.o.relativenumber = true
 vim.o.termguicolors = true
 vim.o.wrap = false -- functioning?
+-- BUG test this thing
