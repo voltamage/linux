@@ -42,7 +42,7 @@ require('lazy').setup({ -- activate lazy plugin manager
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     config = function()
-      require('lazy').setup({'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'})
+      require('nvim-treesitter').setup({'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'})
     end,
   },
   {
@@ -86,3 +86,4 @@ vim.o.clipboard = 'unnamedplus' -- use system clipboard, worth checking exactly 
 vim.o.mouse = 'a' -- enable mouse, across all modes? have to check
 vim.o.number = true                           -- set numbered lines
 vim.o.relativenumber = true
+vim.o.wrap = false
