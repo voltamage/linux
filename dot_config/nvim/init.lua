@@ -20,15 +20,21 @@ require('lazy').setup({ -- activate lazy plugin manager
     name = 'catppuccin',
     lazy = false,
     priority = 1000,
-    transparent_background = true,
-    integrations = {
-      cmp = true,
-      gitsigns = true,
-      mason = true,
-      native_lsp = true,
-      treesitter = true,
-    },
     config = function()
+      require("catppuccin").setup({
+        transparent_background = true,
+	term_colors = true,
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          mason = true,
+	  native_lsp = {
+            enabled = true,
+          },
+          telescope = true,
+          treesitter = true,
+        },
+      })
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
@@ -108,4 +114,5 @@ vim.o.clipboard = 'unnamedplus' -- use system clipboard, worth checking exactly 
 vim.o.mouse = 'a' -- enable mouse, across all modes? have to check
 vim.o.number = true                           -- set numbered lines
 vim.o.relativenumber = true
+vim.o.termguicolors = true
 vim.o.wrap = false
