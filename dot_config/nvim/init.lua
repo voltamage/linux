@@ -52,6 +52,15 @@ require('lazy').setup({ -- activate lazy plugin manager
       'nvim-treesitter/nvim-treesitter',
     },
   },
+  {
+    'pwntester/octo.nvim',
+    config = true, -- run require('gitsigns').setup()
+    dependencies = { -- including github-cli
+      'nvim-tree/nvim-web-devicons',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+  },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     config = function()
