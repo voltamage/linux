@@ -27,12 +27,14 @@ require('lazy').setup({ -- activate lazy plugin manager
         integrations = {
           cmp = true,
           gitsigns = true,
+	  lsp_trouble = true,
           mason = true,
 	  native_lsp = {
             enabled = true,
           },
           telescope = true,
           treesitter = true,
+	  ts_rainbow2 = true,
         },
       })
       vim.cmd.colorscheme 'catppuccin'
