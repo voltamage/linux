@@ -40,7 +40,11 @@ require('lazy').setup({ -- activate lazy plugin manager
   },
   {
     'lewis6991/gitsigns.nvim',
-    config = true, -- run require('gitsigns').setup()
+    config = function()
+      require("gitsigns").setup({
+        current_line_blame = true,
+        })
+    end,
   },
   {
     'sindrets/diffview.nvim', -- vscode-like diff view
