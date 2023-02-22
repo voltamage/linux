@@ -23,13 +23,13 @@ require('lazy').setup({ -- activate lazy plugin manager
     config = function()
       require("catppuccin").setup({
         transparent_background = true,
-	term_colors = true,
+        term_colors = true,
         integrations = {
           cmp = true,
           gitsigns = true,
-	  lsp_trouble = true,
+          lsp_trouble = true,
           mason = true,
-	  native_lsp = {
+          native_lsp = {
             enabled = true,
           },
           telescope = true,
@@ -54,6 +54,10 @@ require('lazy').setup({ -- activate lazy plugin manager
       'nvim-lua/plenary.nvim', -- common files
       'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
     },
+  },
+  {
+    'numToStr/Comment.nvim', -- vscode-like diff view
+    config = true, -- run require('gitsigns').setup()
   },
   {
     'folke/trouble.nvim', -- vscode-like diff view
@@ -90,15 +94,15 @@ require('lazy').setup({ -- activate lazy plugin manager
 --      'folke/trouble.nvim',
 --    },
 --  },
---  {
---    'pwntester/octo.nvim',
---    config = true, -- run require('gitsigns').setup()
---    dependencies = { -- including github-cli
---      'nvim-tree/nvim-web-devicons',
---      'nvim-lua/plenary.nvim',
---      'nvim-telescope/telescope.nvim',
---    },
---  },
+  {
+    'pwntester/octo.nvim',
+    config = true, -- run require('gitsigns').setup()
+    dependencies = { -- including github-cli
+      'nvim-tree/nvim-web-devicons',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+  },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     config = function()
