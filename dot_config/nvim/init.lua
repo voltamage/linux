@@ -32,6 +32,7 @@ require('lazy').setup({ -- activate lazy plugin manager
           native_lsp = {
             enabled = true,
           },
+	  nvimtree = true,
           telescope = true,
           treesitter = true,
 	  ts_rainbow2 = true,
@@ -75,6 +76,13 @@ require('lazy').setup({ -- activate lazy plugin manager
         virtual_text = false,
       })
     end,
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = { -- ripgrep and fd binaries as well
+      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+    },
+    config = true, -- run require('gitsigns').setup()
   },
   {
     'nvim-telescope/telescope.nvim',
