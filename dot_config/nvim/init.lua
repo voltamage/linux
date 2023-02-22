@@ -86,6 +86,14 @@ require('lazy').setup({ -- activate lazy plugin manager
     },
     config = true, -- run require('gitsigns').setup()
   },
+  {
+    'mrjones2014/legendary.nvim',
+    dependencies = { -- ripgrep and fd binaries as well
+      'nvim-telescope/telescope.nvim',
+      'stevearc/dressing.nvim',
+    },
+    config = true, -- run require('gitsigns').setup()
+  },
 --  {
 --    'folke/todo-comments.nvim',
 --    dependencies = { -- ripgrep as well
@@ -93,7 +101,19 @@ require('lazy').setup({ -- activate lazy plugin manager
 --      'nvim-telescope/telescope.nvim',
 --      'folke/trouble.nvim',
 --    },
---  },
+--  },require("lazy").setup({
+  {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require("which-key").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      })
+    end,
+  },
   {
     'pwntester/octo.nvim',
     config = true, -- run require('gitsigns').setup()
