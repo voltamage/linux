@@ -42,6 +42,14 @@ require('lazy').setup({ -- activate lazy plugin manager
     end,
   },
   {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = true, -- run require('gitsigns').setup()
+    -- config = function()
+    --   require("gitsigns").setup({
+    --     })
+    -- end,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     config = function()
       require("gitsigns").setup({
@@ -68,22 +76,22 @@ require('lazy').setup({ -- activate lazy plugin manager
   --   },
   --   config = true, -- run require('gitsigns').setup()
   -- },
-  -- {
-  --   'https://git.sr.ht/~whynothugo/lsp_lines.nvim', -- vscode-like diff view
-  --   config = function()
-  --     require('lsp_lines').setup()
-  --     vim.diagnostic.config({
-  --       virtual_text = false,
-  --     })
-  --   end,
-  -- },
-  -- {
-  --   'nvim-tree/nvim-tree.lua',
-  --   dependencies = { -- ripgrep and fd binaries as well
-  --     'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
-  --   },
-  --   config = true, -- run require('gitsigns').setup()
-  -- },
+  {
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim', -- vscode-like diff view
+    config = function()
+      require('lsp_lines').setup()
+      vim.diagnostic.config({
+        virtual_text = false,
+      })
+    end,
+  },
+  {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = { -- ripgrep and fd binaries as well
+      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+    },
+    config = true, -- run require('gitsigns').setup()
+  },
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { -- ripgrep and fd binaries as well

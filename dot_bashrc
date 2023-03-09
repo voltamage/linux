@@ -4,4 +4,19 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+
+# Custom aliases
+alias cd=z
+alias cdi=zi
+alias reboot='sudo reboot'
+alias shutdown='sudo shutdown -h now'
+alias xbps-install='sudo xbps-install'
+alias xbps-src='~/void-packages/xbps-src'
+
+export EDITOR=nvim
+export HISTCONTROL=ignoreboth:erasedups # exclude commands with a space in front, and exclude commands that are duped sequentially
+export PROMPT_COMMAND="history -a; history -n" # sync history on every command
+
+eval "$(zoxide init bash)"
+
 PS1='[\u@\h \W]\$ '
