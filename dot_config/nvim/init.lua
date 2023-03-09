@@ -60,30 +60,30 @@ require('lazy').setup({ -- activate lazy plugin manager
     'numToStr/Comment.nvim', -- vscode-like diff view
     config = true, -- run require('gitsigns').setup()
   },
-  {
-    'folke/trouble.nvim', -- vscode-like diff view
-    dependencies = {
-      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
-      --'folke/lsp-colors.nvim', -- for colorschemes that aren't LSP ready
-    },
-    config = true, -- run require('gitsigns').setup()
-  },
-  {
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim', -- vscode-like diff view
-    config = function()
-      require('lsp_lines').setup()
-      vim.diagnostic.config({
-        virtual_text = false,
-      })
-    end,
-  },
-  {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = { -- ripgrep and fd binaries as well
-      'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
-    },
-    config = true, -- run require('gitsigns').setup()
-  },
+  -- {
+  --   'folke/trouble.nvim', -- vscode-like diff view
+  --   dependencies = {
+  --     'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+  --     --'folke/lsp-colors.nvim', -- for colorschemes that aren't LSP ready
+  --   },
+  --   config = true, -- run require('gitsigns').setup()
+  -- },
+  -- {
+  --   'https://git.sr.ht/~whynothugo/lsp_lines.nvim', -- vscode-like diff view
+  --   config = function()
+  --     require('lsp_lines').setup()
+  --     vim.diagnostic.config({
+  --       virtual_text = false,
+  --     })
+  --   end,
+  -- },
+  -- {
+  --   'nvim-tree/nvim-tree.lua',
+  --   dependencies = { -- ripgrep and fd binaries as well
+  --     'nvim-tree/nvim-web-devicons', -- icons library, enabled by default
+  --   },
+  --   config = true, -- run require('gitsigns').setup()
+  -- },
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { -- ripgrep and fd binaries as well
@@ -122,15 +122,15 @@ require('lazy').setup({ -- activate lazy plugin manager
       })
     end,
   },
-  {
-    'pwntester/octo.nvim',
-    config = true, -- run require('gitsigns').setup()
-    dependencies = { -- including github-cli
-      'nvim-tree/nvim-web-devicons',
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-    },
-  },
+  -- {
+  --   'pwntester/octo.nvim',
+  --   config = true, -- run require('gitsigns').setup()
+  --   dependencies = { -- including github-cli
+  --     'nvim-tree/nvim-web-devicons',
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-telescope/telescope.nvim',
+  --   },
+  -- },
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     config = function()
