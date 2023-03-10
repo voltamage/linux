@@ -1,10 +1,16 @@
 " Options
+set adblocker=update
+set cache=none
 set darkreader
+set darkreaderblocklist=
 set darkreaderblocklist+=github
 set darkreaderblocklist+=reddit
 set darkreaderblocklist+=www.twitch
 set darkreaderblocklist+=youtube
 set darkreaderblocklist+=voidlinux
+set darkreaderblocklist+=discord
+set darkreaderblocklist+=robertsspaceindustries
+set darkreaderblocklist+=duckduckgo
 set nativetheme=dark
 set userscript
 set userstyle

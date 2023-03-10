@@ -1,0 +1,74 @@
+game:
+  arch: win64
+  exe: drive_c/Program Files/Roberts Space Industries/RSI Launcher/RSI Launcher.exe
+  prefix: /home/main/.local/share/lutris/games/star-citizen
+game_slug: star-citizen
+name: Star Citizen
+requires: null
+script:
+  files:
+  - client: https://install.robertsspaceindustries.com/star-citizen/RSI-Setup-1.6.5.exe
+  game:
+    arch: win64
+    exe: drive_c/Program Files/Roberts Space Industries/RSI Launcher/RSI Launcher.exe
+    prefix: $GAMEDIR
+  install_complete_text: "Installation Complete!\r\n\r\nPlease see our Wiki for important\
+    \ news and configuration requirements:\r\n\r\nhttps://starcitizen-lug.github.io"
+  installer:
+  - task:
+      arch: win64
+      prefix: /home/main/.local/share/lutris/games/star-citizen
+      wine_path: /home/main/.local/share/lutris/runners/wine/lutris-GE-Proton7-35-x86_64/bin/wine
+  - task:
+      app: --force arial vcrun2019 win10
+      arch: win64
+      prefix: /home/main/.local/share/lutris/games/star-citizen
+      wine_path: /home/main/.local/share/lutris/runners/wine/lutris-GE-Proton7-35-x86_64/bin/wine
+  - task:
+      arch: win64
+      args: /S
+      env:
+        DXVK_HUD: '0'
+        __GL_SHADER_DISK_CACHE: '1'
+        __GL_SHADER_DISK_CACHE_SIZE: '1073741824'
+        __GL_THREADED_OPTIMIZATIONS: '1'
+      executable: /home/main/.cache/lutris/installer/star-citizen/client/RSI-Setup-1.6.5.exe
+      prefix: /home/main/.local/share/lutris/games/star-citizen
+      wine_path: /home/main/.local/share/lutris/runners/wine/lutris-GE-Proton7-35-x86_64/bin/wine
+  - execute:
+      command: mkdir -p "$GAMEDIR/drive_c/Program Files/Roberts Space Industries/StarCitizen/"{LIVE,PTU}
+  system:
+    env:
+      DXVK_HUD: '0'
+      __GL_SHADER_DISK_CACHE: 1
+      __GL_SHADER_DISK_CACHE_SIZE: '1073741824'
+      __GL_THREADED_OPTIMIZATIONS: '1'
+    prefer_system_libs: false
+  wine:
+    dxvk: true
+    dxvk_nvapi: false
+    esync: true
+    overrides:
+      libglesv2: builtin
+      nvapi,nvapi64: disabled
+    system_winetricks: false
+    version: lutris-GE-Proton7-35-x86_64
+slug: starcitizen-lutris-install
+system:
+  env:
+    DXVK_HUD: '0'
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_SIZE: '1073741824'
+    __GL_THREADED_OPTIMIZATIONS: '1'
+  prefer_system_libs: false
+variables: {}
+version: LIVE/PTU
+wine:
+  dxvk: true
+  dxvk_nvapi: false
+  esync: true
+  overrides:
+    libglesv2: builtin
+    nvapi,nvapi64: disabled
+  system_winetricks: false
+year: 2016

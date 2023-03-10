@@ -3,22 +3,26 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
 
 # Custom aliases
+alias cat=bat
 alias cd=z
 alias cdi=zi
 alias fetch='pfetch'
+alias ls='lsd'
 alias reboot='sudo reboot'
 alias shutdown='sudo shutdown -h now'
 alias xbps-install='sudo xbps-install'
 alias xbps-remove='sudo xbps-remove'
 alias xbps-src='~/void-packages/xbps-src'
 
+alias teardown='steam steam://rungameid/1167630'
+
 export EDITOR=nvim
-export XDG_RUNTIME_DIRECTORY="/run/user/$(id -u)"
+export FZF_DEFAULT_COMMAND="fd -H -tf -td --exclude '*.git' --exclude '*.cache'"
 export HISTCONTROL=ignoreboth:erasedups # exclude commands with a space in front, and exclude commands that are duped sequentially
 export PROMPT_COMMAND='history -a; history -n' # sync history on every command
+export XDG_RUNTIME_DIRECTORY="/run/user/$(id -u)"
 
 eval "$(zoxide init bash)"
 
