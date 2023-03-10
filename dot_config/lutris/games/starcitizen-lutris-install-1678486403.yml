@@ -58,7 +58,9 @@ system:
   env:
     DXVK_HUD: '0'
     __GL_SHADER_DISK_CACHE: '1'
-    __GL_SHADER_DISK_CACHE_SIZE: '1073741824'
+    __GL_SHADER_DISK_CACHE_PATH: /home/main/.local/share/lutris/cache
+    __GL_SHADER_DISK_CACHE_SIZE: '-1'
+    __GL_SHADER_DISK_CACHE_SKIP_CLEANUP: '1'
     __GL_THREADED_OPTIMIZATIONS: '1'
   prefer_system_libs: false
 variables: {}
@@ -66,9 +68,11 @@ version: LIVE/PTU
 wine:
   dxvk: true
   dxvk_nvapi: false
+  dxvk_version: dxvk-2.1
   esync: true
   overrides:
     libglesv2: builtin
     nvapi,nvapi64: disabled
   system_winetricks: false
+  version: wine-lutris-GE-Proton7-38-x86_64
 year: 2016
