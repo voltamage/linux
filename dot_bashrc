@@ -16,7 +16,10 @@ alias xbps-install='sudo xbps-install'
 alias xbps-remove='sudo xbps-remove'
 alias xbps-src='~/void-packages/xbps-src'
 
+alias star-citizen="lutris rungame/star-citizen"
 alias teardown='steam steam://rungameid/1167630'
+
+#export WINEDLLPATH='/home/main/.local/share/lutris/runners/wine/wine-lutris-GE-Proton7-38-x86_64/lib/wine/i386-unix' lutris
 
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND="fd -H -tf -td --exclude '*.git' --exclude '*.cache'"
