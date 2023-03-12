@@ -24,6 +24,7 @@ alias teardown='steam steam://rungameid/1167630'
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND="fd -H -tf -td --exclude '*.git' --exclude '*.cache'"
 export HISTCONTROL=ignoreboth:erasedups # exclude commands with a space in front, and exclude commands that are duped sequentially
+export LESSHISTFILE=/dev/null
 export PROMPT_COMMAND='history -a; history -n' # sync history on every command
 export XDG_RUNTIME_DIRECTORY="/run/user/$(id -u)"
 
