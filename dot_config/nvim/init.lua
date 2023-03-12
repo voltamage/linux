@@ -22,7 +22,7 @@ require('lazy').setup({ -- activate lazy plugin manager
     priority = 1000,
     config = function()
       require("catppuccin").setup({
-        transparent_background = true,
+        --transparent_background = true,
         term_colors = true,
         integrations = {
           cmp = true,
