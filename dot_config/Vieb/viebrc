@@ -11,6 +11,7 @@ set darkreaderblocklist+=robertsspaceindustries
 set darkreaderblocklist+=voidlinux
 set darkreaderblocklist+=www.twitch
 set darkreaderblocklist+=youtube
+set darkreaderblocklist+=archlinux
 set externalcommand=mpv
 set nativetheme=dark
 set userscript

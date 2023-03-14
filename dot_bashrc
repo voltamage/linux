@@ -4,6 +4,10 @@
 [[ $- != *i* ]] && return
 
 
+edit() {
+chezmoi add "$1"; chezmoi edit "$1"; chezmoi apply
+}
+
 # Custom aliases
 alias cat=bat
 alias cd=z
@@ -16,6 +20,7 @@ alias xbps-install='sudo xbps-install'
 alias xbps-remove='sudo xbps-remove'
 alias xbps-src='~/void-packages/xbps-src'
 
+alias factorio='steam steam://rungameid/427520'
 alias star-citizen="lutris rungame/star-citizen"
 alias teardown='steam steam://rungameid/1167630'
 

@@ -62,6 +62,7 @@ system:
     __GL_SHADER_DISK_CACHE_SIZE: '-1'
     __GL_SHADER_DISK_CACHE_SKIP_CLEANUP: '1'
     __GL_THREADED_OPTIMIZATIONS: '1'
+  mangohud: true
   prefer_system_libs: false
 variables: {}
 version: LIVE/PTU
